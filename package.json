@@ -2,7 +2,7 @@
   "name": "react-virtuoso",
   "author": "Petyo Ivanov",
   "sideEffects": false,
-  "version": "0.0.0-development",
+  "version": "0.0.1",
   "homepage": "https://virtuoso.dev/",
   "license": "MIT",
   "source": "src/index.tsx",
@@ -34,7 +34,7 @@
     "lint": "eslint src test e2e --ext .ts,.tsx",
     "typecheck": "tsc --noEmit && tsc --noEmit -p e2e/tsconfig.json && tsc --noEmit -p test/tsconfig.json",
     "browse-examples": "node e2e/test-cases.mjs && parcel e2e/__examples.html",
-    "prepare": "npm run build",
+    "prepare": "npm run build:dist",
     "semantic-release": "semantic-release"
   },
   "dependencies": {
