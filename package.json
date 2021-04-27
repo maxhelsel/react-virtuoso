@@ -35,7 +35,6 @@
     "typecheck": "tsc --noEmit && tsc --noEmit -p e2e/tsconfig.json && tsc --noEmit -p test/tsconfig.json",
     "browse-examples": "node e2e/test-cases.mjs && parcel e2e/__examples.html",
     "prepare": "yarn build",
-    "postinstall": "cd ./node_modules/react-virtuoso && npm install && npm run build",
     "semantic-release": "semantic-release"
   },
   "dependencies": {
