@@ -190,11 +190,6 @@ export interface VirtuosoProps<D> extends Omit<ListProps, 'groupCounts' | 'group
    * Provides access to the root DOM element
    */
   scrollerRef?: (ref: HTMLElement | Window | null) => any
-
-  /**
-   * Inject a custom ref into the component to be used as the parent scroll container. 'useWindowScroll' must be true.
-   */
-  customScrollerRef?: (ref: HTMLElement | null) => any
 }
 
 export interface GroupedVirtuosoProps<D>
@@ -303,11 +298,6 @@ export interface VirtuosoGridProps extends GridProps {
    * Uses the document scroller rather than wrapping the grid in its own.
    */
   useWindowScroll?: boolean
-
-  /**
-   * Inject a custom ref into the component to be used as the parent scroll container. 'useWindowScroll' must be true.
-   */
-  customScrollerRef?: (ref: HTMLElement | null) => any
 }
 
 export interface VirtuosoHandle extends ListHandle {
