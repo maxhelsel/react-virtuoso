@@ -321,6 +321,7 @@ export function buildWindowScroller({ usePublisher, useEmitter, useEmitterValue 
     const ScrollerComponent = useEmitterValue('ScrollerComponent')!
     const smoothScrollTargetReached = usePublisher('smoothScrollTargetReached')
     const totalListHeight = useEmitterValue('totalListHeight')
+    const customScrollerRef = useEmitterValue('customScrollerRef')
     const { scrollerRef, scrollByCallback, scrollToCallback } = useScrollTop(
       scrollTopCallback,
       smoothScrollTargetReached,
@@ -328,7 +329,9 @@ export function buildWindowScroller({ usePublisher, useEmitter, useEmitterValue 
     )
 
     useIsomorphicLayoutEffect(() => {
-      scrollerRef.current = window
+      customScrollerRef && customScrollerRef.current
+        ? scrollerRef.current = customScrollerRef.current
+        : scrollerRef.current = window;
       return () => {
         scrollerRef.current = null
       }
@@ -426,6 +429,7 @@ export const { Component: List, usePublisher, useEmitterValue, useEmitter } = sy
       alignToBottom: 'alignToBottom',
       useWindowScroll: 'useWindowScroll',
       scrollerRef: 'scrollerRef',
+      customScrollerRef: 'customScrollerRef',
 
       // deprecated
       item: 'item',
