@@ -27,15 +27,7 @@
     "dist"
   ],
   "scripts": {
-    "start": "microbundle watch --raw --no-sourcemap --strict --no-compress --jsx React.createElement --format=cjs,esm",
-    "build": "microbundle --strict --jsx React.createElement --format=cjs,esm",
-    "test": "jest --passWithNoTests",
-    "e2e": "jest --config jest.e2e.config.js --run-in-band --passWithNoTests",
-    "lint": "eslint src test e2e --ext .ts,.tsx",
-    "typecheck": "tsc --noEmit && tsc --noEmit -p e2e/tsconfig.json && tsc --noEmit -p test/tsconfig.json",
-    "browse-examples": "node e2e/test-cases.mjs && parcel e2e/__examples.html",
-    "prepare": "npm run build:dist",
-    "semantic-release": "semantic-release"
+    "prepare": "npm run build:dist"
   },
   "dependencies": {
     "@virtuoso.dev/react-urx": "^0.2.5",
